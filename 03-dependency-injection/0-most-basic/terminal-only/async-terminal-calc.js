@@ -74,19 +74,19 @@ let controller = { // each method has equivalent functionality, different style
             };
         };
         let cb2 = (err, result) => {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        model.setLastResult(result, cb3);
-                    };
-                };
+            if (err) {
+                console.log(err);
+            } else {
+                model.setLastResult(result, cb3);
+            };
+        };
         let cb3 = (err, result) => {
-                            if (err) {
-                                console.log(err);
-                            } else {
-                                view.render(result);
-                            };
-                        };
+            if (err) {
+                console.log(err);
+            } else {
+                view.render(result);
+            };
+        };
     }
 };
 

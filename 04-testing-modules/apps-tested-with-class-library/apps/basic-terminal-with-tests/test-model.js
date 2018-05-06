@@ -1,19 +1,13 @@
 let model = require('../../components/models/basic-mvclh-model');
 
-console.log("-- testing model --");
+let tressa = require('../../testing-tools/tressa');
 
-let expected;
-let actual;
 
-// --- case 1 - default value
-expected = 0;
-actual = model.getLastResult();
-console.log("expected: ", expected, ". Recieved: ", actual);
+tressa.title("Test model");
 
-// --- case 2 - reset LastResult
-model.setLastResult(9);
-expected = 9;
-actual = model.getLastResult();
-console.log("expected: ", expected, ". Recieved: ", actual);
+// 1
+tressa.assert(0 == model.getLastResult(), "case1 default value");
 
-// how could you make this better?
+// 2
+model.setLastResult(9)
+tressa.assert(9 == model.getLastResult(), "case2 reset LastResult")
